@@ -1,0 +1,48 @@
+{
+  "name": "chizhos-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ChizhOS — Fleet Management System (Next.js + Prisma)",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:studio": "prisma studio",
+    "create-admin": "tsx scripts/create-admin.ts",
+    "setup": "prisma migrate deploy && prisma generate && tsx scripts/create-admin.ts",
+    "backup": "tsx scripts/backup.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.632.0",
+    "@prisma/client": "5.18.0",
+    "clsx": "2.1.1",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "3.10.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.14",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.20",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.5",
+    "postcss": "8.4.41",
+    "prisma": "5.18.0",
+    "tailwindcss": "3.4.9",
+    "tsx": "4.16.5",
+    "typescript": "5.5.4",
+    "vitest": "2.0.5"
+  }
+}
